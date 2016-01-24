@@ -1,4 +1,5 @@
 import json
+import base64
 import log
 
 TAG_STATUS = 'status'
@@ -21,9 +22,10 @@ ERR_DICT = {
 
 
 class Response(object):
-    def __init__(self, status=None, payload=None):
+    def __init__(self, status=None, code=200, payload=None):
         self.status = RESPONSE_OK if status is None else status
         self.payload = payload
+        self.code = code
         self.status_text = ERR_DICT[status]
 
     def status(self):
@@ -50,9 +52,7 @@ class Request(object):
 
     def __str__(self):
         return 'ENDPOINT: %s, status=%s, payload=%s' % (self.endpoint, self.status, self.payload)
-        
 
-
-RESPONSE_OK = Response(STATUS_OK)
-RESPONSE_INVALID_REQUEST = Response(STATUS_INVALID_REQUEST)
-RESPONSE_INTERNAL_ERROR = Response(STATUS_INTERNAL_ERROR)
+RESPONSE_OK = Response(STATUS_OK, code=200)
+RESPONSE_INVALID_REQUEST = Response(STATUS_INVALID_REQUEST, code=400)
+RESPONSE_INTERNAL_ERROR = Response(STATUS_INTERNAL_ERROR, code=500)
