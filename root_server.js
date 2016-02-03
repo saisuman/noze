@@ -3,8 +3,8 @@ var flags = require('./flags');
 var express = require('express');
 var app = express();
 
-// index.html is mapped to / by default.
 app.use('/static', express.static('static'));
+app.get('/', function(req, res) { res.redirect(301, '/static/index.html'); });
 
 var rpc = require('./rpc');
 var root = require('./root');

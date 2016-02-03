@@ -1,10 +1,21 @@
 <html>
   <head>
     <title>Noze</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="node_display.js"></script>
   </head>
-  <body>
+  <body onload="init()">
     <h1>
       Noze
     </h1>
+    <table id="nodetable">
+      <tr>
+	<th>Name</th>
+	<th>Address</th>
+	<th>Last Heartbeat</th>
+	<th>State</th>
+      </tr>
+    </table>
+    <div id="log"></div>
   </body>
 </html>

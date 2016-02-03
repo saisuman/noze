@@ -1,0 +1,22 @@
+body {
+    background-color: #c7c7c7;
+    font-face: monospace;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+tr {
+}
+
+th {
+    font-family: Arial;
+}
+
+td {
+    font-family: Arial;
+    background-color: #c7ffc7;
+    padding-bottom: 10px;
+    padding-right: 10px;
+}
