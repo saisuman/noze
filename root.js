@@ -37,6 +37,11 @@ isValidNodeStatus = function(payload) {
 };
 
 module.exports = {
+    broadcastMessage: function(payload, callback) {
+	console.log('Broadcast request with payload: ' + JSON.stringify(payload));
+	
+    },
+
     updateNode: function(payload, callback) {
 	console.log('Update request with payload: ' + JSON.stringify(payload));
 	if (!isValidNodeStatus(payload)) {

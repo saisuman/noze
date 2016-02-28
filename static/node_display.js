@@ -1,3 +1,12 @@
+function toRelTime(epochMilliseconds) {
+    var diffMinutes = parseInt((Date.now() - epochMilliseconds) / 1000 / 60);
+    if (diffMinutes > 100) {
+	var diffHours = parseInt(diffMinutes / 60);
+	return diffHours + ' hours ago';
+    }
+    return diffMinutes + ' minutes ago';  
+}
+
 function drawNodeTable(responseObj) {
     var table = document.getElementById('nodetable');
     // Remove all but header.
@@ -16,7 +25,7 @@ function drawNodeTable(responseObj) {
 	};
 	addCol(node.name);
 	addCol(node.addr);
-	addCol(node.last_heartbeat_ts);
+	addCol(toRelTime(node.last_heartbeat_ts));
 	addCol(node.state);
 	table.appendChild(row);
     });
