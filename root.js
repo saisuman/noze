@@ -2,7 +2,6 @@ var rpc = require('./rpc');
 var flags = require('./flags');
 var sqlite3 = require('sqlite3').verbose();
 var database = new sqlite3.Database(flags.databaseFile);
-var db = require('./db');
 
 var NODE_STATUSES = {
     STATE_ACTIVE: 'ACTIVE',

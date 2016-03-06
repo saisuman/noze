@@ -32,6 +32,3 @@ app.get('/action_query', function(req, res) {
 	rpc.sendResponse(status, payload, res);
     });
 });
-
-
-
